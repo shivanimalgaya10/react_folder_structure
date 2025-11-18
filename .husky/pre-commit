@@ -6,5 +6,5 @@ npm run lint || exit 1
 # echo "✨ Running Prettier..."
 # npm run format || exit 1
 
-# echo "🧪 Running Tests..."
-# npm run test || exit 1
+echo "🧪 Running Tests..."
+npm run test || exit 1
