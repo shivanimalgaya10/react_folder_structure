@@ -1,6 +1,6 @@
 // import Home from '@/views/Home';
 
-import { ComingSoon } from '@/views';
+// import { ComingSoon } from '@/views';
 import Home from '@/views/Home';
 
 export const routes = [

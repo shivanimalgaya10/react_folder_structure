@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "format": "prettier --write .",
-    "test": "jest"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^19.2.0",
