@@ -7,7 +7,9 @@ import './App.css';
 
 function App() {
     const userRole = 'user'; // Example role
-    const isAuthenticated = false; // Example auth status
+    // const isAuthenticated = localStorage.getItem('isAuthenticated'); // Example auth status
+    const authFromStorage = localStorage.getItem('isAuthenticated');
+    const isAuthenticated: boolean = authFromStorage ? authFromStorage === 'true' : false;
 
     return (
         <Suspense fallback={'Loading...'}>
