@@ -1,14 +1,14 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 
+import config from '@/config';
+import { APIRequestConfig } from '@/types/common.types';
 import {
     removeLocalStorageToken,
     removeSessionStorageToken,
     // getSessionStorageToken,
     getLocalStorageToken
 } from '@/utils/common/common.utils';
-import config from '@/config';
-import { APIRequestConfig } from '@/types/common.types';
 
 const APIrequest = async ({
     method,

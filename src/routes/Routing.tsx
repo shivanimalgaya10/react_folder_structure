@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+
 import ProtectedRoute from './ProtectedRoute';
 import { routes } from './routeConfig';
+
 import { ComingSoon, NotFound, Unauthorized } from '@/views';
 
 interface Props {

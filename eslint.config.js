@@ -1,11 +1,12 @@
-import { defineConfig } from 'eslint/config';
-import globals from 'globals';
 import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
+import importPlugin from 'eslint-plugin-import';
 import pluginReact from 'eslint-plugin-react';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
     { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
@@ -17,7 +18,8 @@ export default defineConfig([
         plugins: {
             react,
             'react-hooks': reactHooks,
-            'react-refresh': reactRefresh
+            'react-refresh': reactRefresh,
+            'import': importPlugin
         },
         rules: {
             ...js.configs.recommended.rules,
@@ -49,7 +51,43 @@ export default defineConfig([
                 'arrays': 'never',
                 'objects': 'never'
             }],
-            'semi': ['error', 'always']
+            'semi': ['error', 'always'],
+            'import/order': [
+                'error',
+                {
+                    groups: [
+                        'builtin',
+                        'external',
+                        ['internal', 'parent', 'sibling', 'index'],
+                        'unknown',
+                        'type',
+                        'object'
+                    ],
+                    pathGroups: [
+                        {
+                            pattern: 'react',
+                            group: 'external',
+                            position: 'before'
+                        },
+                        {
+                            pattern: '@/**',
+                            group: 'internal',
+                            position: 'after'
+                        },
+                        {
+                            pattern: '*.css',
+                            group: 'unknown',
+                            position: 'after'
+                        }
+                    ],
+                    pathGroupsExcludedImportTypes: ['react'],
+                    'newlines-between': 'always',
+                    alphabetize: {
+                        order: 'asc',
+                        caseInsensitive: true
+                    }
+                }
+            ]
         }
     }
 ]);

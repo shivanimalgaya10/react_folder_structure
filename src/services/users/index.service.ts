@@ -1,5 +1,5 @@
-import APIrequest from '@/services/apiService';
 import { users } from '@/apiEndPoints';
+import APIrequest from '@/services/apiService';
 import type { APIRequestConfig } from '@/types/common.types';
 import type { GetDiscountQueryParamsType } from '@/types/discounts.types';
 

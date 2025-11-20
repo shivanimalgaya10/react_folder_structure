@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* common-css-start */
+:root {
+    --body_font: "Inter", sans-serif;
+    --primary_color: #009fe3;
+    --primary_color_light: #199FFF20;
+    --primary_hover_color: #002433;
+    --hover_color: #97d7f3;
+    --hover_color_gray: #c9c4c46c;
+    --hover_color_light: #94daf86c;
+    --bg_blue: #003580;
+    --bg-bluelight: #00358030;
+
+    --bg_white: #ffffff;
+    --bg_white1: #ffffff;
+    --bg_whitelight: #ffffff50;
+    --bg_gray: #F5F7FA;
+    --bg_gray_sidebar: #F5F7FA;
+    --bg_gray_backdrop: #b8b7b72f;
+    --bg_gray1: #DEE2E6;
+    --bg_gray2: #e9edf1bb;
+    --bg_gray_btn: #ebebeb;
+    --bg_green: #1FD46A;
+    --bg_red: #F6605D;
+    --bg_red_light_btn: #F8D7DA;
+    --bg_redlight: #F6605D95;
+    --bg_black: #000000;
+    --bg_alert: #ff9f4350;
+    --border_color: #DEE2E6;
+
+    --text_white: #ffffff;
+    --text_black: #000000;
+    --text_black2: #555555;
+    --text_green: #1FD46A;
+    --textBox_green1: #02A261;
+    --text_red: #F6605D;
+    --text_red1: #ff0000e1;
+    --text_dark: #212529;
+    --text_gray: #6C757D;
+    --text_gray_light: #6c757da1;
+    --text_alert: #ff9f43;
+
+    --fs_xxs: 8px;
+    --fs_xs: 12px;
+    --fs_xss: 14px;
+    --fs_sm: 14px;
+    --fs_md: 16px;
+    --fs_lg: 18px;
+    --fs_xl: 20px;
+    --fs_xxl: 24px;
+
+    --fw_300: 300;
+    --fw_400: 400;
+    --fw_500: 500;
+    --fw_540: 550;
+    --fw_600: 600;
+    --fw_700: 700;
+    --fw_800: 800;
+
+    --br_xs: .3125rem;
+    --br_sm: .625rem;
+    --br_md: 1rem;
+    --br_lg: 22px;
+    --br_xl: 2rem;
+    --br_100: 100%;
+    --br_0: 0rem;
+
+    --cmn_border: 1px solid #DEE2E6;
+    --multiselect_border: none;
+    --cmn_border_dashed: 1px dashed #b7bbbe;
+    --border_gray: 1px solid #6C757D;
+    --border_white: 1px solid #ffffff;
+    --border_skyblue: 1px solid #009fe3;
+    --border_red: 1px solid #F6605D;
+    --border_primary: 1px solid var(--primary_color);
+    /* --cmn_boxshadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    --cmn_boxshadow: 0 .15rem 1.75rem #c4cde033;
+    --cmn_boxshadow2: rgba(0, 0, 0, 0.014) 0px 0px 3px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    --cmn_transition: .5s all;
+
+    --scrollbar_color1: #6C757D50;
+    --scrollbar_color2: #DEE2E650;
+    --table_header_bg: #dee2e685;
+    /* --table_header_bg: #0000ff; */
+
+    /* new root  */
+    --fs_10: 10px;
+    --bgBox_gray: #F4F6F9;
+    --bgBox_blue1: #EAF6FF;
+    --bgBox_blue2: #31A6FF10;
+    --bgBox_blue3: #226CE010;
+    --bgBox_red: #F2594510;
+    --bgBox_yellow: #F7AE241A;
+    --byBox_green: #94eca31a;
+    --bgBox_green: #02A26110;
+    --textBox_blue1: ##EAF6FF;
+    --textBox_blue2: #31A6FF;
+    --textBox_blue3: #226CE0;
+    --textBox_red: #F25945;
+    --textBox_red_light: #ffd9da;
+    --textBox_yellow: #F7AE24;
+    --textBox_green: #02A261;
+    --textBox_green_light: rgba(174,232,197,0.61);
+    --text_blue: #4C9CE8;
+    --borderBox_red: 1px solid #F2594520;
+    /* new root end */
+    --link-color: #0d6efd;
+    --floating_label_color: rgba(33,37,41,.65);
+    --gray_gradient: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
+}
+
+.dark:root {
+    --bg_gray: #373737;
+    --bgBox_gray: #373737;
+    --bg_white: #252525;
+    --bg_white1: #000000;
+    --bg_gray1: #000000;
+    --bg_gray_sidebar: #000000;
+    --hover_color: #7a8a91;
+    --hover_color_gray: #3f4142;
+    --primary_color: #47afdb;
+    --border_color: #ffffff60;
+
+    --text_red1: #ff6b6be1;
+    --text_gray: #ffffffb4;
+    --text_gray1: #ffffffb4;
+    --text_black: #ffffff;
+    --text_dark: #e7e4e4;
+    --text_black2: #b9b5b5;
+    --bgBox_blue1: #61686d;
+    --textBox_red_light: #fda0a3;
+    --textBox_green_light: rgba(104, 250, 162, 0.61);
+    --floating_label_color: rgba(248, 248, 248, 0.836);
+
+    --link-color: #7dadf7;
+    --cmn_border: 1px solid #ffffff60;
+    --cmn_boxshadow: 0 .15rem 1.75rem #00000033;
+    --multiselect_border: 1px solid #ffffff60;
+    --border_white: 1px solid #ffffff60;
+
+    --scrollbar_color1: #00000060;
+    --scrollbar_color2: #DEE2E620;
+    --table_header_bg: #000000bd;
+    --gray_gradient: linear-gradient(180deg, #181818 0%, #050505 100%);
+
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar_color1) var(--scrollbar_color2) !important;
+}
+
+html body {
+    overflow-x: hidden;
+    font-family: var(--body_font) !important;
+    background-color: var(--bg_white);
+    height: calc(100vh - 115px);
+}
+
+section {
+    position: relative;
+    padding: .5rem 0px 1rem 0;
+}

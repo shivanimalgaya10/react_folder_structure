@@ -1,0 +1,175 @@
+/* Remove focus outlines */
+.tiptap-editor:focus,
+.tiptap-editor *:focus,
+.tiptap-editor .ProseMirror:focus,
+.tiptap-editor .ProseMirror-focused {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Content area styling */
+.editor-content-area {
+  border-top: none;
+  border: 1px solid black;
+  /* min-height: 400px; */
+  border-radius: 0 0 4px 4px ;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+}
+.tiptap-editor p { color: initial}
+.tiptap-editor .resize-handle {
+  background: #000;
+  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+.image_upload_loading {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(63, 63, 63, 0.1);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editor-toolbar {
+  display: flex;
+  padding: 0.2rem;
+  gap: 0.5rem;
+  background-color: var(--bg_white);
+  /* border: var(--cmn_border); */
+  border:1px solid black;   
+  border-radius: 4px 4px 0 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+.tiptap-editor {
+  padding: 0.8rem;
+  /* min-height: 398px; */
+  height: 520px;
+  width: 600px;
+  scrollbar-width: thin;
+  overflow: auto;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+}
+
+.tiptap ul, ol {
+  padding: 0 1rem;
+  margin: 1.10rem 1rem 1.10rem 0.4rem;
+
+}
+
+.tiptap ul, ol:first-child {
+    margin-top: 0;
+}
+
+.tiptap li p {
+    margin-top: 0.10em;
+    margin-bottom: 0.10em;
+  }
+.tiptap li:first-child {
+    margin-top: 0;
+}
+/* Toolbar button styling */
+.toolbar-btn {
+  background: var(--bg_white);
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 4px 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text_gray1);
+}
+
+.toolbar-btn:hover {
+  background: var(--hover_color_gray);
+}
+
+.toolbar-btn.is-active {
+  background: #e6e6e6;
+  color: #1a73e8;
+}
+
+/* Select styling */
+.toolbar-select-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 0px 0 4px;
+}
+
+.toolbar-select {
+  appearance: none;
+  background: var(--bg_white);
+  border: none;
+  padding: 4px 3px 4px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--text_dark);
+  font-size: 14px;
+}
+.toolbar-select:focus, .toolbar-select-focused {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.toolbar-select-wrapper:hover {
+  border-radius: 5px;
+  background: var(--hover_color_gray);
+}
+.toolbar-select:hover {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.select-icon {
+  font-size: 12px;
+  pointer-events: none;
+  color: var(--text_gray1);
+}
+
+/* Color picker styling */
+.toolbar-color-picker {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.source_editor {
+  margin-top: -8px;
+  border: var(--cmn_border);
+  border-top: none;
+}
+
+/* Save button styling */
+.save-button {
+  margin-top: 15px !important;
+  width: 100% !important;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}

@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
-import Routing from './routes/Routing';
 
 import { BrowserRouter } from 'react-router-dom';
+
+import Routing from './routes/Routing';
 
 import './App.css';
 
