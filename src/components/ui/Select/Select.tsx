@@ -43,23 +43,35 @@ const Select: React.FC<SelectProps> = ({
     value,
     onChange,
     getOptionsService,
-    diabledColourClass = '',
-    withPadding = false
+    diabledColourClass = ''
 }) => {
     const wrapperRef = useRef(null);
     const [isOpen, setIsOpen] = useState(open);
     const [searchText, setSearchText] = useState('');
     const [loadedOptions, setLoadedOptions] = useState(false);
     const [optionsData, setOptionsData] = useState(options);
-    const found = optionsData.find(opt => opt.value === value);
+    // const found = optionsData.find(opt => opt.value === value);
     // const [selectedLabel, setSelectedLabel] = useState(found?.label || placeHolder || 'Select an option');
-    const [selectedLabel, setSelectedLabel] = useState(found?.label);
+    // const [selectedLabel, setSelectedLabel] = useState(found?.label);
     const isFetched = useRef(false);
 
+    // useEffect(() => {
+    //     if (value === '' || value === undefined || value === null) {
+    //         setSelectedLabel('');
+    //     } else {
+    //         const found = optionsData.find(opt => opt.value == value);
+    //         setSelectedLabel(found?.label as string);
+    //     }
+    // }, [optionsData, value]);
+    const selectedLabel = useMemo(() => {
+        if (value === '' || value === undefined || value === null) return '';
+        const found = optionsData.find(opt => opt.value == value);
+        return found?.label || '';
+    }, [optionsData, value]);
     useEffect(() => {
         if (getOptionsService && !isFetched.current) {
             isFetched.current = true;
-            setLoadedOptions(true);
+            // setLoadedOptions(true);
             getOptionsService({ queryParams : { page: 1, page_size: 300 } })
                 .then(res => {
                     const { data } = res as unknown as { data: { [key: string]: string }[] };
@@ -87,17 +99,6 @@ const Select: React.FC<SelectProps> = ({
     }, [getOptionsService]);
 
     useEffect(() => {
-        if (value === '' || value === undefined || value === null) {
-            // setSelectedLabel(placeHolder || 'Select an option');
-            setSelectedLabel('');
-        } else {
-            const found = optionsData.find(opt => opt.value == value);
-            // setSelectedLabel(found?.label || placeHolder || 'Select an option');
-            setSelectedLabel(found?.label as string);
-        }
-    }, [optionsData, value]);
-
-    useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (wrapperRef.current && !(wrapperRef.current as any).contains(event.target)) {
                 setIsOpen(false);
@@ -109,7 +110,7 @@ const Select: React.FC<SelectProps> = ({
     const handleSelect = (val: string, label: string) => {
         if (disabled) return;
         onChange?.({ target: { name, value: `${val}`, label } });
-        setSelectedLabel(label);
+        // setSelectedLabel(label);
         setSearchText('');
         setIsOpen(false);
     };

@@ -84,7 +84,7 @@ const GlobalEditor: React.FC<GlobalEditorProps> = ({
     generateFullHtml = false,
     customStyles = ''
 }) => {
-    console.log('initialContent', initialContent);
+    // console.log('initialContent', initialContent);
     const [html, setHtml] = useState(initialContent || '');
     const [isHtmlView, setIsHtmlView] = useState(false);
     const [isImageUploading, setIsImageUploading] = useState(false);
@@ -239,7 +239,7 @@ const GlobalEditor: React.FC<GlobalEditorProps> = ({
             } else {
                 try {
                     const url = URL.createObjectURL(file); // simulate upload
-                    console.log('url', url);
+                    // console.log('url', url);
                     const tempImageData = {
                         src: url,
                         title: null,
